@@ -11,6 +11,14 @@ class Data extends Component {
       filteredResults:[]
     };
 
+    headings = [
+        { name: "Image", width: "10%" },
+        { name: "Name", width: "10%" },
+        { name: "Phone", width: "20%" },
+        { name: "Email", width: "20%" },
+        { name: "DOB", width: "10%" }
+      ]
+
     componentDidMount(){
         API.getRandom()
         .then(res => this.setState({ results: res.results }))
@@ -28,7 +36,7 @@ class Data extends Component {
     render(){
         return(
             <div>
-                <SearchForm
+                <Search
                 search={this.state.search}
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleInputChange}
